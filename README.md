@@ -9,7 +9,7 @@ The rules for converting strings and numbers to Boolean values state that `0, Na
 
 `NaN == NaN` is the only value that produces false when compared to itself. Even `null, undefined` produces true when compared to itself
 
-`!` perator will convert all strings except "" to true
+`!` perator will convert all strings except "" to false
 
 `||` will return the value to its left when that can be converted to true and will return the value on its right otherwise.  
 ```
