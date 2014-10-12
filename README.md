@@ -1,7 +1,9 @@
+## Tricky (draft)
+
 `NaN` is a special "number"
 `null` and `undifined` are undefined values nothing to do with Number.
 
-The rules for converting strings and numbers to Boolean values state that `0, NaN, ""` count as false. Every other numbers and characters are converted to `false`
+The rules for converting strings and numbers to Boolean values state that `0, NaN, ""` count as false. Every other numbers and characters are converted to `true`
 
 `null` and `undefined` Boolean conversions yeild false except when compared to itself.
 
