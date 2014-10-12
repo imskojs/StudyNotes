@@ -144,11 +144,11 @@ Default output in nodejs does not print > 2 nested Objects, use below code to ov
 ```
     var util = require('util');
     console.log(util.inspect(output, {showHidden: false, depth: null}));
-```
+```  
 
-Positive index starts at 0,  
-Counting number starts at 1,  
-Negative index starts at 1 from the back.  
+Positive index starts at 0,
+Counting number starts at 1,
+Negative index starts at 1 from the back.
 
 In looping over properties with `for(var i in object0)`, numericy(character that can coerce to number... what's the proper name?) are moved in front of string type property names. These numericies are ordered in ascending order. String type property names are not ordered, that is, they stay as is behind these moved numericies.
 
@@ -156,3 +156,16 @@ Arrays can easily be converted to Objects by changing their index number to prop
 be treated like Objects but Objects cannot be treated like Arrays.
 In functions if objects are passed as arguments then arrays can be passed as argumets as well, Array will simply be convert to an object before use, if not... why not?
 
+index number is front inclusive, end exclusive.  
+```
+|0|1|2|3|4|5|
+ A B C D E F
+
+"ABCDEF".slice(1,3)
+```
+slices indexes that is in "front of beginning" of index number 1 and indexes that are "behind the beginning" of index number 3
+```
+|0|1|2|3|4|5|
+ A B C D E F
+--^   ^------
+```
