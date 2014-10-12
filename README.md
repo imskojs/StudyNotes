@@ -141,12 +141,14 @@ Above is just a function. But when called with `new` it becomes a constructor.
 Portotype of Object.prototype is null.
 
 Default output in nodejs does not print > 2 nested Objects, use below code to override.
+```
     var util = require('util');
     console.log(util.inspect(output, {showHidden: false, depth: null}));
-    
-Positive index starts at 0,
-Counting number starts at 1,
-Negative index starts at 1 from the back.
+```
+
+Positive index starts at 0,  
+Counting number starts at 1,  
+Negative index starts at 1 from the back.  
 
 In looping over properties with `for(var i in object0)`, numericy(character that can coerce to number... what's the proper name?) are moved in front of string type property names. These numericies are ordered in ascending order. String type property names are not ordered, that is, they stay as is behind these moved numericies.
 
