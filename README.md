@@ -1,5 +1,3 @@
-## Tricky(Draft)
-
 `NaN` is a special "number"  
 `null` and `undifined` are undefined values nothing to do with Number.
 
@@ -9,7 +7,7 @@ The rules for converting strings and numbers to Boolean values state that `0, Na
 
 `NaN == NaN` is the only value that produces false when compared to itself. Even `null, undefined` produces true when compared to itself
 
-`!` perator will convert all strings except "" to false
+`!` perator will convert all strings except `""` to `false`
 
 `||` will return the value to its left when that can be converted to true and will return the value on its right otherwise.  
 ```
@@ -17,10 +15,9 @@ The rules for converting strings and numbers to Boolean values state that `0, Na
 	console.log("Karl" || "user");	// Karl
 ```
 
-`&&` returns the value to its left when that can be converted to fase and will return the value on its right otherwise. (opposite of ||)
+`&&` returns the value to its left when that can be converted to fase and will return the value on its right otherwise. (opposite of `||`)
 
-|| has the lowest precedence, then comes && then the comprison operator (>,==, and
-so on) and then the rest
+`||` has the lowest precedence, then comes `&&` then the comprison operator (`>`,`==`, and so on) and then the rest
 
 When `null` or `undefined` occurs on either side of the operator, it produces true
 only if both sides are one of null or undefined.  
@@ -42,7 +39,7 @@ Other wierd type conversions;
 ```
 
 Keywords and reserved words other than obvious ones;  
-catch, finally, implements, protected, throw, try, with.
+`catch`, `finally`, `implements`, `protected`, `throw`, `try`, `with`.
 
 Variable names cannot contain `.` however they can contain `-` and `$` anywhere.  
 Number cannot be the first letter of the variable name.
@@ -73,10 +70,10 @@ A pure function is a specific kind of value-producing function that not only has
 Recursive functions are mostly used for situations where branching is required.  
 (Understand what it is...Hard time tracing and implementing recursions)
 
-Arrays don't need property name. It is automatically indexed with 0 to length-1 of the array.  
+Arrays don't need property name. It is automatically indexed with `0` to `length - 1` of the array.  
 Objects need property name.
 
-When a function is called a automatic variable named `arguments` is added to the environment in which the function body runs. It is an object that holds all of the arguments passed to the function. It is an Object and not an array however this object has property names like "0", "1", "2",...but cannot use any array methods.
+When a function is called a automatic variable named `arguments` is added to the environment in which the function body runs. It is an object that holds all of the arguments passed to the function. It is an Object and not an array however this object has property names like `0`, `1`, `2`,...but cannot use any array methods.
 
 Closure: usually objects, including functions used within a function, is not available outside of the outer most function. Closure is exception. Returning a function from a function complete with variables from an external scope, is called a closure. That is, contents that is stored inside of the inner function will be available to the outside of the outermost function(global environment).
  A closure wraps(and freezes) up an entire environment, binding necessary variables from other scopes. For example;  
@@ -113,7 +110,7 @@ but...
     x();    // --> 3
 ```
 
-Objects do not have a lenght. Object.length = undefined.
+Objects do not have a length. `Object.length = undefined`.
 
 A class is a set of Objects that all share the same property(key only not the value) and inherit from the same basic prototype.
 
@@ -139,7 +136,7 @@ Above is just a function. But when called with `new` it becomes a constructor.
 
 `this` refers to calling object not the owner.
 
-Portotype of Object.prototype is null.
+Portotype of `Object.prototype` is `null`.
 
 Default output in nodejs does not print > 2 nested Objects, use below code to override.
 ```
@@ -147,9 +144,9 @@ Default output in nodejs does not print > 2 nested Objects, use below code to ov
     console.log(util.inspect(output, {showHidden: false, depth: null}));
 ```  
 
-Positive index starts at 0,
-Counting number starts at 1,
-Negative index starts at 1 from the back.
+Positive index starts at 0,  
+Counting number starts at 1,  
+Negative index starts at 1 from the back.  
 
 In looping over properties with `for(var i in object0)`, numericy(character that can coerce to number... what's the proper name?) are moved in front of string type property names. These numericies are ordered in ascending order. String type property names are not ordered, that is, they stay as is behind these moved numericies.
 
@@ -157,14 +154,14 @@ Arrays can easily be converted to Objects by changing their index number to prop
 be treated like Objects but Objects cannot be treated like Arrays.  
 In functions if objects are passed as arguments then arrays can be passed as argumets as well, Array will simply be convert to an object before use, if not... why not?
 
-index number is front inclusive, end exclusive.  
+Index number is front inclusive.  
 ```
 |0|1|2|3|4|5|
  A B C D E F
 
 "ABCDEF".slice(1,3)
 ```
-slices indexes that is in "front of beginning" of index number 1 and indexes that are "behind the beginning" of index number 3
+Above slices indexes that is in "front of beginning" of index number 1 and indexes that are "behind the beginning" of index number 3
 ```
 |0|1|2|3|4|5|
  A B C D E F
