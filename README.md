@@ -48,7 +48,7 @@ catch, finally, implements, protected, throw, try, with.
 Variable names cannot contain `.` however they can contain `-` and `$` anywhere.
 Number cannot be the first letter of the variable name.
 
-Side-effect: A statement that affects the world. It could be trivial thisngs like displaying something on the screen(Now I understand why we print "Hellow World"), or it could change the internal state of the machine in a way that will affect the statement that come after it. These changes are called side effects. On the contrary following are the statement but are not side-effects;  
+Side-effect: A statement that affects the world. It could be trivial thisngs like displaying something on the screen(Now I understand why we print "Hello World"), or it could change the internal state of the machine in a way that will affect the statement that come after it. These changes are called side effects. On the contrary following are the statement but are not side-effects;  
 ```
 	1;
 	!false;
