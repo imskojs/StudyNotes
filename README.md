@@ -1,6 +1,6 @@
-## Tricky (draft)
+## Tricky(Draft)
 
-`NaN` is a special "number"
+`NaN` is a special "number"  
 `null` and `undifined` are undefined values nothing to do with Number.
 
 The rules for converting strings and numbers to Boolean values state that `0, NaN, ""` count as false. Every other numbers and characters are converted to `true`
@@ -17,8 +17,7 @@ The rules for converting strings and numbers to Boolean values state that `0, Na
 	console.log("Karl" || "user");	// Karl
 ```
 
-`&&` returns the value to its left when that can be converted to fase and will return
-the value on its right otherwise. (opposite of ||)
+`&&` returns the value to its left when that can be converted to fase and will return the value on its right otherwise. (opposite of ||)
 
 || has the lowest precedence, then comes && then the comprison operator (>,==, and
 so on) and then the rest
@@ -42,10 +41,10 @@ Other wierd type conversions;
 	console.log("five" * 2)
 ```
 
-Keywords and reserved words other than obvious ones;
+Keywords and reserved words other than obvious ones;  
 catch, finally, implements, protected, throw, try, with.
 
-Variable names cannot contain `.` however they can contain `-` and `$` anywhere.
+Variable names cannot contain `.` however they can contain `-` and `$` anywhere.  
 Number cannot be the first letter of the variable name.
 
 Side-effect: A statement that affects the world. It could be trivial thisngs like displaying something on the screen(Now I understand why we print "Hello World"), or it could change the internal state of the machine in a way that will affect the statement that come after it. These changes are called side effects. On the contrary following are the statement but are not side-effects;  
@@ -71,10 +70,10 @@ Function declaration, g;
 
 A pure function is a specific kind of value-producing function that not only has no side effects but also deosn't rely on side effects from other code. For example, it doesn't read global variables that are occasionally changed by other code.  Pure = purely value only. It has a property that when called with the same arguments, it always produces the same value.
 
-Recursive functions are mostly used for situations where branching is required.
+Recursive functions are mostly used for situations where branching is required.  
 (Understand what it is...Hard time tracing and implementing recursions)
 
-Arrays don't need property name. It is automatically indexed with 0 to length-1 of the array.
+Arrays don't need property name. It is automatically indexed with 0 to length-1 of the array.  
 Objects need property name.
 
 When a function is called a automatic variable named `arguments` is added to the environment in which the function body runs. It is an object that holds all of the arguments passed to the function. It is an Object and not an array however this object has property names like "0", "1", "2",...but cannot use any array methods.
@@ -135,7 +134,7 @@ A constructor: A maker of a Class of Objects. eg)
         autoprop2 : function() { alert("abc");}
     }
 ```
-Above is just a function. But when called with `new` it becomes a constructor.
+Above is just a function. But when called with `new` it becomes a constructor.  
 `new` keyword builds a new instance.
 
 `this` refers to calling object not the owner.
@@ -155,7 +154,7 @@ Negative index starts at 1 from the back.
 In looping over properties with `for(var i in object0)`, numericy(character that can coerce to number... what's the proper name?) are moved in front of string type property names. These numericies are ordered in ascending order. String type property names are not ordered, that is, they stay as is behind these moved numericies.
 
 Arrays can easily be converted to Objects by changing their index number to property names. Hence Arrays can
-be treated like Objects but Objects cannot be treated like Arrays.
+be treated like Objects but Objects cannot be treated like Arrays.  
 In functions if objects are passed as arguments then arrays can be passed as argumets as well, Array will simply be convert to an object before use, if not... why not?
 
 index number is front inclusive, end exclusive.  
@@ -171,3 +170,4 @@ slices indexes that is in "front of beginning" of index number 1 and indexes tha
  A B C D E F
 --^   ^------
 ```
+
