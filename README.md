@@ -21,6 +21,15 @@ Above slices indexes that is in "front of beginning" of index number 1 and index
 --^   ^------
 ```
 
+Below 2 for loops are identical;
+```
+for(var i = 0; i < 11; i += 1){}
+
+var i;
+for(i = 0; i < 11; i +=1){}
+```
+That is, `var i` is in global.environment, or parent environment of for loop.
+
 In looping over properties with `for(var i in object0)`, numericy(character that can coerce to number... what's the proper name?) are moved in front of string type property names. These numericies are ordered in ascending order. String type property names are not ordered, that is, they stay as is behind these moved numericies.
 
 Positive index starts at 0,  
@@ -152,7 +161,7 @@ A constructor: A maker of a Class of Objects. eg)
         this.autoprop2 = function() { alert("abc");}
     }
 ```
-    or;
+or;
 ```
     Shoe.prototype = {
         autoprop1 : function() { alert("Shoe's on!");},
