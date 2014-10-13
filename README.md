@@ -1,7 +1,7 @@
 ## Tricky(Draft)
 
 #### Hoisting;  
-Declaration first; `var x;`, `fucntion f;`
+Declaration first; `var x;`, `fucntion f;`  
 Assignment and calling function second; `x = 1;`, `f = function f(){}`
 
 Objects do not have a length. `Object.length = undefined`.
