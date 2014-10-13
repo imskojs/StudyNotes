@@ -163,7 +163,7 @@ Result is the pushed.length.
           [ 10, 11, 12, [ 1, 2, 3 ] ],
           { '1': 'dick', '2': [ 1, 1 ] } ]
 
-### Array.length
+### Array.length  (yeah, it's not a method)
 
     var output = a0.length;
     // output = 8
