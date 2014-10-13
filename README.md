@@ -127,27 +127,71 @@ Closure: usually objects, including functions used within a function, is not ava
     var checkLocalX = testClosure();
     checkLocalX(); /* or */ testClosure()();
 ```
-Closures are like exception to the lexical scoping rule. Take below Example;  
-```
-    function vary() {
+### Immediately invoked funtion vs Returnining Functions
+
+All of below are equivalent when a output returned by a function is a value,
+
+    //Immediate invokation of a function;
+    ( function ( ) {
+        console.log("Called");
+    } )();
+
+    // Immediate invokation of a function Bad Practice;
+    function ( ) {
+        console.log("Called");
+    }();
+
+    //Returning a function to a variable then calling.
+    var fName =( function ( ) {
+                    console.log("Called");
+    } )
+    fName();
+    
+    //Same without outer parens, normal practice;
+    var fName = function ( ) {
+        console.log("Called");
+    } 
+    fName();
+
+
+
+if the output returned by a function is another function and that another function is closure then immediately invoked function will not be the same as Returning function.  
+Because immediately invoking a function is like a creating a new object everytime it is called for example;
+
+    ( function immeInvoke( ) {
         var i = 0;
-        return function(){
+        return function ( ){
             i += 1;
-            console.log("I can see i = " + i + 
-            " and this gets incremented everytime it is invoked outside");
-        }
-    }
-    vary()();   // --> 1
-    vary()();   // --> 1
-    vary()();   // --> 1  
-```
-but...  
-```
-    x = vary();
-    x();    // --> 1
-    x();    // --> 2
-    x();    // --> 3
-```
+            console.log("Called " + i + " time(s)");
+        };
+    })
+
+Immediately invoking funcName0 is like these;
+
+    ( immeInvoke( ) )();
+    ( immeInvoke( ) )();
+    ( immeInvoke( ) )();
+
+Are the same as calling seperate retruning functions like these;
+
+    var invObj0 = ( funcName0( ) );
+    invObj0();
+    var invObj1 = ( funcName0( ) );
+    invObj1();
+    var invObj2 = ( funcName0( ) );
+    invObj2();
+
+Only if we called the same `invObj` function (Some other languages allow you to do this, eg. Scala) the `i` inside a function would increment but we cannot call this `invObj` because it disappears immediately after the invokation of a function. Hence immediately invoked function is not the same as returning a function to a variable then calling it;
+
+    ( funcName0( ) )();     // "Called 1 time(s)"
+    ( funcName0( ) )();     // "Called 1 time(s)"
+    ( funcName0( ) )();     // "Called 1 time(s)"
+
+    var funcReturn = immeInvoke( );
+    funcReturn();           // "Called 1 time(s)"
+    funcReturn();           // "Called 2 time(s)"
+    funcReturn();           // "Called 3 time(s)"
+
 
 A class is a set of Objects that all share the same property(key only not the value) and inherit from the same basic prototype.
 
