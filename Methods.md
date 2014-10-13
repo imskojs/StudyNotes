@@ -1,5 +1,9 @@
+### For arrays;
 If a method is changing the content then it returns things other than content changed object.  
 If a method is not changing the content but rather change the form, and orders than the method returns reformed or ordered object.
+
+### For strings;
+If not obvious, return content changed, formed, ordered final object.
 
 
 # Array methods;
