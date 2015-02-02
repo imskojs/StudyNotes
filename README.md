@@ -6,6 +6,11 @@
 ```
 Above does not work because we JS interpretes {} as opening and closing of block and not opening and closing of object literal
 
+To make it work wrap it in ()
+```js
+({a: 1}).toString();
+```
+
 #### Hoisting;  
 Declaration first; `var x;`, `fucntion f;`  
 Assignment and calling function second; `x = 1;`, `f = function f(){}`
