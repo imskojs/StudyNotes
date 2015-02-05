@@ -1,5 +1,10 @@
 ## Tricky(Draft)
-
+###
+```js
+var x = 2;
+x = x--
+console.log(x);  //  logs 2...
+```
 ### Immediate . (period) on literal Object
 ```js
 {a: 1}.toString(); 
