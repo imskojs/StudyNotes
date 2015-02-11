@@ -1,5 +1,6 @@
 ## Tricky(Draft)
 ### Indirection
+```js
 function foo() {
   console.log( this.a );
 }
@@ -10,7 +11,7 @@ var p = { a: 4 };
 
 o.foo(); // 3
 (p.foo = o.foo)(); // 2... Expected 4
-
+```
 ###
 ```js
 var x = 2;
